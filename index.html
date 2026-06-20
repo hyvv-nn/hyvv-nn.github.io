@@ -80,7 +80,7 @@
 
   <div class="callout">
     <div class="title">ONE-LINE</div>
-    <p>강화학습 정책 설계(P1)와 시뮬레이션–실물 다계층 검증·데이터 취득(P2)을 모두 경험한 2인 팀. <strong style="color:var(--teal)">모션 제작 → 강화학습 → 환경 데이터 취득 → Sim-to-Real</strong> 파이프라인 전 구간에 즉시 투입 가능하다.</p>
+    <p>시뮬레이션–실물 다계층 검증·데이터 취득(P1)과 강화학습 정책 설계(P2)를 모두 경험한 2인 팀. <strong style="color:var(--teal)">모션 제작 → 강화학습 → 환경 데이터 취득 → Sim-to-Real</strong> 파이프라인 전 구간에 즉시 투입 가능하다.</p>
   </div>
 
   <h2>역량 매핑</h2>
@@ -88,13 +88,13 @@
   <table>
     <thead><tr><th>OH GYM 요구 역량</th><th>충족 근거</th><th>근거</th></tr></thead>
     <tbody>
-      <tr><td>강화학습(PPO) 정책 학습·보상 설계</td><td>PPO 정책 학습·평가, 보상함수 설계</td><td class="num">P1</td></tr>
-      <tr><td>Sim-to-Real / 일반화</td><td><strong>도메인 랜덤화</strong>로 미지 40개 플랜트 일반화 검증</td><td class="num">P1</td></tr>
-      <tr><td>제어·동역학 기반 이해</td><td>근궤적 PID, 2차 관절 서보 모델링·극점 배치</td><td class="num">P1</td></tr>
+      <tr><td>강화학습(PPO) 정책 학습·보상 설계</td><td>PPO 정책 학습·평가, 보상함수 설계</td><td class="num">P2</td></tr>
+      <tr><td>Sim-to-Real / 일반화</td><td><strong>도메인 랜덤화</strong>로 미지 40개 플랜트 일반화 검증</td><td class="num">P2</td></tr>
+      <tr><td>제어·동역학 기반 이해</td><td>근궤적 PID, 2차 관절 서보 모델링·극점 배치</td><td class="num">P2</td></tr>
       <tr class="crit"><td>시뮬레이터 기반 휴머노이드 강화학습</td><td>ROBOTIS <strong>OP3</strong> 공차기 PPO+DR — 방향 크로스오버·v6/v7 프런티어(완료)</td><td class="num"><span class="val">P3</span></td></tr>
-      <tr><td>다양한 환경에서의 데이터 취득</td><td>웹2D→Webots3D→실물 3계층 검증, 센서 로그</td><td class="num">P2</td></tr>
-      <tr><td>시뮬레이터 활용</td><td>Webots 3D 물리 시뮬레이션 구축·동기화</td><td class="num">P2</td></tr>
-      <tr><td>임베디드·HW 통합</td><td>Raspberry Pi+Arduino 이원화, A*·QR·YOLO·FSM</td><td class="num">P2</td></tr>
+      <tr><td>다양한 환경에서의 데이터 취득</td><td>웹2D→Webots3D→실물 3계층 검증, 센서 로그</td><td class="num">P1</td></tr>
+      <tr><td>시뮬레이터 활용</td><td>Webots 3D 물리 시뮬레이션 구축·동기화</td><td class="num">P1</td></tr>
+      <tr><td>임베디드·HW 통합</td><td>Raspberry Pi+Arduino 이원화, A*·QR·YOLO·FSM</td><td class="num">P1</td></tr>
     </tbody>
   </table>
   <p style="font-size:13.5px;color:var(--ink);"><span class="val" style="color:var(--amber);font-weight:700;">주황 행</span>은 단기 프로젝트(P3)로 <strong>확보한</strong> 역량이다(OP3 공차기 PPO 완료).</p>
@@ -103,14 +103,28 @@
   <table>
     <thead><tr><th>이름</th><th>핵심 역량</th><th>담당</th></tr></thead>
     <tbody>
-      <tr><td><strong>박형진</strong></td><td>강화학습(PPO)·고전제어·시뮬레이션, 동역학</td><td>P1 단독 / P3 RL 학습</td></tr>
-      <tr><td><strong>전민제</strong></td><td>임베디드·자율주행 시스템·하드웨어</td><td>P2 HW·전장부 조립·BOM</td></tr>
+      <tr><td><strong>박형진</strong></td><td>강화학습(PPO)·고전제어·시뮬레이션, 동역학</td><td>P2 단독 / P3 RL 학습</td></tr>
+      <tr><td><strong>전민제</strong></td><td>임베디드·자율주행 시스템·하드웨어</td><td>P1 HW·전장부 조립·BOM</td></tr>
     </tbody>
   </table>
 
   <hr>
 
-  <h2>P1 — 강화학습 vs 고전제어 관절 서보</h2>
+  <h2>P1 — 저비용 임베디드 자율수거로봇</h2>
+  <h3>공동주택 음식물 쓰레기통 자율 수거 시제품 (전민제·박형진, 한양대 종합설계)</h3>
+  <img class="demo" src="assets/p2_grasp.gif" alt="자율수거로봇 파지 데모">
+  <div class="demo-cap">시제품 로봇 — QR 정렬 후 쓰레기통 파지·운반</div>
+  <ul>
+    <li><strong>3계층 검증</strong>: 웹 2D → <strong>Webots 3D(R2025a)</strong> → 실물 로봇을 WebSocket 실시간 동기화. 풀스케일(200×140, 48동·24빈·4로봇) + 시제품(40×30) 두 모드.</li>
+    <li><strong>SW 규모</strong>: 142 커밋, Python 63% / TypeScript 32%. <code class="ic">FastAPI</code> · <code class="ic">Next.js 14</code> · 비전 <code class="ic">OpenCV+pyzbar+YOLO</code>.</li>
+    <li><strong>HW</strong>: Raspberry Pi 4 + Arduino Mega 이원화, 초음파×5·IMU·카메라, 모터·서보, 2S LiPo + 전력 설계·BOM 확정.</li>
+    <li><strong>알고리즘</strong>: A*(octile+inflation), 최근접 이웃 TSP, QR 측위, YOLO 검출, 수거 FSM, Arduino 독립 안전정지.</li>
+    <li><strong>ROS 2 이식</strong>: A*→Nav2 NavFn, inflation→InflationLayer, 회전·전후진→DWB까지 매핑 명세(Humble + Nav2 준비 완료).</li>
+    <li><strong>결과</strong>: 단일 4빈 241.1s, 2대 분담 makespan 191.7s(20.5%↓), 200×140 격자 경로질의 <span class="mono">&lt;50ms</span>.</li>
+  </ul>
+  <p class="proj-link"><strong>→</strong> <a href="https://github.com/hyvv-nn/autoproject">github.com/hyvv-nn/autoproject</a></p>
+
+  <h2>P2 — 강화학습 vs 고전제어 관절 서보</h2>
   <h3>외란·파라미터 불확실성 하의 1자유도 관절 서보 제어 (박형진 단독)</h3>
   <img class="demo" src="assets/p1_demo.gif" alt="1-DOF 관절 서보 제어 데모">
   <div class="demo-cap">1자유도 관절 서보 — PID/PPO 추종 제어 데모</div>
@@ -130,27 +144,13 @@
   <p><strong>결론</strong>: 잘 모델링된 저차 선형계는 고전제어가, 비선형·미지 동역학은 학습 제어가 유리하다는 선택 경계를 실측 제시. 휴머노이드 RL의 학습·전이 방법론과 동일하다.</p>
   <p class="proj-link"><strong>→</strong> <a href="https://github.com/hyvv-nn/p1-autocontrol">github.com/hyvv-nn/p1-autocontrol</a></p>
 
-  <h2>P2 — 저비용 임베디드 자율수거로봇</h2>
-  <h3>공동주택 음식물 쓰레기통 자율 수거 시제품 (전민제·박형진, 한양대 종합설계)</h3>
-  <img class="demo" src="assets/p2_grasp.gif" alt="자율수거로봇 파지 데모">
-  <div class="demo-cap">시제품 로봇 — QR 정렬 후 쓰레기통 파지·운반</div>
-  <ul>
-    <li><strong>3계층 검증</strong>: 웹 2D → <strong>Webots 3D(R2025a)</strong> → 실물 로봇을 WebSocket 실시간 동기화. 풀스케일(200×140, 48동·24빈·4로봇) + 시제품(40×30) 두 모드.</li>
-    <li><strong>SW 규모</strong>: 142 커밋, Python 63% / TypeScript 32%. <code class="ic">FastAPI</code> · <code class="ic">Next.js 14</code> · 비전 <code class="ic">OpenCV+pyzbar+YOLO</code>.</li>
-    <li><strong>HW</strong>: Raspberry Pi 4 + Arduino Mega 이원화, 초음파×5·IMU·카메라, 모터·서보, 2S LiPo + 전력 설계·BOM 확정.</li>
-    <li><strong>알고리즘</strong>: A*(octile+inflation), 최근접 이웃 TSP, QR 측위, YOLO 검출, 수거 FSM, Arduino 독립 안전정지.</li>
-    <li><strong>ROS 2 이식</strong>: A*→Nav2 NavFn, inflation→InflationLayer, 회전·전후진→DWB까지 매핑 명세(Humble + Nav2 준비 완료).</li>
-    <li><strong>결과</strong>: 단일 4빈 241.1s, 2대 분담 makespan 191.7s(20.5%↓), 200×140 격자 경로질의 <span class="mono">&lt;50ms</span>.</li>
-  </ul>
-  <p class="proj-link"><strong>→</strong> <a href="https://github.com/hyvv-nn/autoproject">github.com/hyvv-nn/autoproject</a></p>
-
   <h2>P3 — ROBOTIS OP3 공차기 강화학습</h2>
   <h3>고정베이스 OP3 공차기: 해석적 고전 vs PPO 학습 (박형진, 1주 단기)</h3>
   <img class="demo" src="assets/p3_kick.gif" alt="OP3 공차기 강화학습 데모">
   <div class="demo-cap">ROBOTIS OP3 — PPO+도메인 랜덤화 학습 킥</div>
-  <p>P1 방법론(PPO + 도메인 랜덤화)을 휴머노이드로 확장. ROBOTIS <strong>OP3</strong>(20-DoF, MuJoCo)가 공을 차되, 원리 기반 <strong>해석적 임펄스-최대화 킥</strong>과 <strong>PPO+DR 킥</strong>을 동일 씬에서 공정 비교.</p>
+  <p>P2 방법론(PPO + 도메인 랜덤화)을 휴머노이드로 확장. ROBOTIS <strong>OP3</strong>(20-DoF, MuJoCo)가 공을 차되, 원리 기반 <strong>해석적 임펄스-최대화 킥</strong>과 <strong>PPO+DR 킥</strong>을 동일 씬에서 공정 비교.</p>
   <ul>
-    <li><strong>헤드라인(방향 크로스오버)</strong>: 고전=정밀·약함, 학습=약 7배 강함·거친 조준 → 상보적 경계(P1의 선형↔비선형 경계를 방향축으로 확장).</li>
+    <li><strong>헤드라인(방향 크로스오버)</strong>: 고전=정밀·약함, 학습=약 7배 강함·거친 조준 → 상보적 경계(P2의 선형↔비선형 경계를 방향축으로 확장).</li>
     <li><strong>다목적 프런티어(3시드)</strong>: 보상마다 최적이 다름 — 파워=v6goalb, 조준=v6resb, 균형=v6clean (mean±std 확정).</li>
     <li><strong>정직한 파워 측정</strong>: reach(굴림) 대신 <strong>공 launch 속도</strong>로 → v7(지수 임팩트 보상)이 <span class="mono">1.86±0.09 m/s</span> = OP3 planted 하드웨어 천장(~2 m/s, DeepMind 동일 로봇)의 <strong>93%</strong>. 그 너머는 자유베이스 런업 = 향후 과제.</li>
     <li><strong>산출물</strong>: GitHub(README + 크로스오버·파워 그래프 + 킥 데모 GIF + v1~v7 코드).</li>
