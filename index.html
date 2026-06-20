@@ -65,6 +65,14 @@
   .proj-link{font-family:"D2Coding","JetBrains Mono",monospace;font-size:14px;}
   .demo{display:block;width:100%;border:2px solid var(--deep);margin:16px 0;box-shadow:0 4px 18px rgba(76,29,149,0.22),0 10px 36px rgba(76,29,149,0.14);}
   .demo-cap{font-family:"D2Coding","JetBrains Mono",monospace;font-size:12.5px;color:var(--ink);margin:-8px 0 18px;}
+  .team{display:flex;gap:18px;margin:18px 0;}
+  .member{flex:1;display:flex;gap:14px;background:#FFFFFF;border:1px solid var(--deep);padding:14px;box-shadow:0 4px 18px rgba(76,29,149,0.14);}
+  .member img{width:104px;height:138px;object-fit:cover;border:2px solid var(--deep);flex:none;}
+  .mname{font-size:17px;font-weight:800;color:var(--deep);}
+  .mmeta{font-family:"D2Coding","JetBrains Mono",monospace;font-size:12px;color:var(--ink);margin-bottom:8px;}
+  .mroles{margin:0;list-style:none;padding:0;}
+  .mroles li{font-size:13px;margin:4px 0;color:var(--ink);}
+  .mroles b{display:inline-block;min-width:26px;color:var(--teal);font-family:"D2Coding","JetBrains Mono",monospace;}
   footer{border-top:2px solid var(--deep);margin-top:48px;padding-top:20px;font-size:13px;color:var(--ink);font-family:"D2Coding","JetBrains Mono",monospace;}
 </style>
 </head>
@@ -75,7 +83,7 @@
     <div class="eyebrow">OH! GYM! · 제1기 휴머노이드 트레이너</div>
     <h1>휴머노이드 강화학습 팀 포트폴리오</h1>
     <div class="sub">로보티즈 AI Sapiens · Open Humanoid Gym 지원</div>
-    <div class="meta">TEAM <span class="ph">⟨팀명⟩</span> &nbsp;|&nbsp; 박형진 · 전민제 &nbsp;|&nbsp; 한양대학교 기계공학부</div>
+    <div class="meta">TEAM <strong style="color:var(--deep)">MeNaldo</strong> &nbsp;|&nbsp; 박형진 · 전민제 &nbsp;|&nbsp; 한양대학교 기계공학부</div>
   </header>
 
   <div class="callout">
@@ -97,16 +105,35 @@
       <tr><td>임베디드·HW 통합</td><td>Raspberry Pi+Arduino 이원화, A*·QR·YOLO·FSM</td><td class="num">P1</td></tr>
     </tbody>
   </table>
-  <p style="font-size:13.5px;color:var(--ink);"><span class="val" style="color:var(--amber);font-weight:700;">주황 행</span>은 단기 프로젝트(P3)로 <strong>확보한</strong> 역량이다(OP3 공차기 PPO 완료).</p>
+  <p style="font-size:13.5px;color:var(--ink);"><span class="val" style="color:var(--amber);font-weight:700;">주황 행</span>은 프로젝트(P3)로 <strong>확보한</strong> 역량이다(OP3 공차기 PPO 완료).</p>
 
-  <h2>팀 구성</h2>
-  <table>
-    <thead><tr><th>이름</th><th>핵심 역량</th><th>담당</th></tr></thead>
-    <tbody>
-      <tr><td><strong>박형진</strong></td><td>강화학습(PPO)·고전제어·시뮬레이션, 동역학</td><td>P2 단독 / P3 RL 학습</td></tr>
-      <tr><td><strong>전민제</strong></td><td>임베디드·자율주행 시스템·하드웨어</td><td>P1 HW·전장부 조립·BOM</td></tr>
-    </tbody>
-  </table>
+  <h2>팀 — MeNaldo</h2>
+  <div class="team">
+    <div class="member">
+      <img src="assets/member2.jpg" alt="전민제">
+      <div>
+        <div class="mname">전민제</div>
+        <div class="mmeta">2002.04.25 · 한양대 기계공학부 21</div>
+        <ul class="mroles">
+          <li><b>P1</b> HW/EE — 설계·조립·BOM 관리</li>
+          <li><b>P2</b> 결과 분석·해석 — 소논문 작성</li>
+          <li><b>P3</b> PID &amp; RL 알고리즘</li>
+        </ul>
+      </div>
+    </div>
+    <div class="member">
+      <img src="assets/member1.png" alt="박형진">
+      <div>
+        <div class="mname">박형진</div>
+        <div class="mmeta">2002.11.30 · 한양대 기계공학부 21</div>
+        <ul class="mroles">
+          <li><b>P1</b> SIM/SW — 가상환경 생성·AI 알고리즘</li>
+          <li><b>P2</b> 1-DOF 제어 시뮬레이션</li>
+          <li><b>P3</b> MuJoCo 환경 구축·OP3 학습</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <hr>
 
@@ -145,7 +172,7 @@
   <p class="proj-link"><strong>→</strong> <a href="https://github.com/hyvv-nn/p1-autocontrol">github.com/hyvv-nn/p1-autocontrol</a></p>
 
   <h2>P3 — ROBOTIS OP3 공차기 강화학습</h2>
-  <h3>고정베이스 OP3 공차기: 해석적 고전 vs PPO 학습 (박형진, 1주 단기)</h3>
+  <h3>고정베이스 OP3 공차기: 해석적 고전 vs PPO 학습 (박형진)</h3>
   <img class="demo" src="assets/p3_kick.gif" alt="OP3 공차기 강화학습 데모">
   <div class="demo-cap">ROBOTIS OP3 — PPO+도메인 랜덤화 학습 킥</div>
   <p>P2 방법론(PPO + 도메인 랜덤화)을 휴머노이드로 확장. ROBOTIS <strong>OP3</strong>(20-DoF, MuJoCo)가 공을 차되, 원리 기반 <strong>해석적 임펄스-최대화 킥</strong>과 <strong>PPO+DR 킥</strong>을 동일 씬에서 공정 비교.</p>
@@ -171,8 +198,7 @@
   </table>
 
   <footer>
-    접수마감 2026-06-21 · 결과발표 2026-06-26 · 제출 steamcup@steamcup.org<br>
-    포트폴리오 v0.1 — <span class="ph">⟨ ⟩</span> 표시 항목만 채우면 제출본.
+    박형진 · 전민제 · 한양대학교 기계공학부 · steamcup@steamcup.org
   </footer>
 
 </div>
